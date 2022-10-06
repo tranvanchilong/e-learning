@@ -1,0 +1,56 @@
+@import 'bootstrap';
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  line-height: 1.5;
+  font-size: 16px;
+}
+img {
+  display: block;
+  max-width: 100%;
+}
+textarea {
+  resize: vertical;
+}
+ul {
+  margin-bottom: 0;
+}
+.btn-submit {
+  min-width: 100%;
+}
+
+.menu-item {
+  position: relative;
+  min-width: 110px;
+  min-height: 45px;
+  padding: 0 16px;
+  i,
+  a {
+    position: absolute;
+    top: 50%;
+  }
+  i {
+    transform: translateY(-50%);
+  }
+  a {
+    align-self: center;
+    text-decoration: none;
+    color: #333;
+    margin-left: 22px;
+    transform: translateY(-45%);
+  }
+}
+
+.mxw-600 {
+  max-width: 600px;
+}

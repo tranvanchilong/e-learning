@@ -1,0 +1,25 @@
+- provide(:title, @user.name)
+.container
+  .row.mt-3
+    .col-md-4.group-my-info
+      section.user_info
+        .my-avatar
+          = image_tag user_image(@user)
+          h1.user_info-link = link_to "#{@user.name}", @user
+      section.stats
+        = render 'follow_form' if logged_in?
+        = render 'shared/stats'
+    .col-md-8
+      h1.h3.text-center.my-4 Information
+      table.table
+        thead
+          tr
+            th scope="col"  Shows
+            th scope="col"  Total
+        tbody
+          tr
+            td khóa học đã đăng ký:
+            td #{@user.user_courses.size} khóa học
+          tr
+            td Số từ vựng đã ghi nhớ:
+            td #{@user.user_words.size} từ vựng

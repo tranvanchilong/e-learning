@@ -1,0 +1,2 @@
+class Boo < ApplicationRecord
+end

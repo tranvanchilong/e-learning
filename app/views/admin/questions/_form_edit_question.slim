@@ -1,0 +1,6 @@
+= form_for [:admin, @question], method: 'patch', html: { autocomplete: "off"} do |f|
+  .form-inline
+    = f.hidden_field :question_id, value: @question.id
+    = f.text_area :title, placeholder: "Question", required: true, class: 'form-control mr-2 ', value: "#{@question.title}"
+    = f.submit "Update question", class: 'btn btn-primary'
+    = link_to "Cancel", admin_questions_path(lesson_id: @question.lesson.id), class: 'btn btn-secondary ml-2'

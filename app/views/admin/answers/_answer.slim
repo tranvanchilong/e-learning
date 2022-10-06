@@ -1,0 +1,6 @@
+.form-inline.ml-3.mb-2 (id="answer-holder-#{answer.id}")
+  input.form-check-input name="is_key" type="checkbox" disabled="disabled" checked=answer.is_key
+  .form-group.flex-fill
+    input.form-control-plaintext readonly="readonly" type="text" value="#{answer.answer}"
+  = button_tag "Edit", class: "btn btn-warning btn-sm btn-edit-answer mx-2", data: {answer_id: answer.id}
+  = link_to 'Delete', admin_answer_path(answer), method:"delete", data: {:confirm => "You sure?" }, class: "btn btn-danger btn-sm"

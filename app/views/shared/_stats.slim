@@ -1,0 +1,10 @@
+- @user ||= current_user
+.stats
+  a.mr-3.btn.btn-primary href="#{following_user_path(@user)}" 
+    strong#following.stat
+      = @user.following.size
+    |  following
+  a.btn.btn-info href="#{followers_user_path(@user)}" 
+    strong#followers.stat
+      = @user.followers.size
+    |  followers

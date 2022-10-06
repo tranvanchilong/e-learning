@@ -1,0 +1,105 @@
+.course-sticky {
+  position: sticky;
+  top: calc(76px + 1rem);
+  height: 100%;
+  text-align: center;
+}
+
+// Words List
+.words_list {
+  display: grid;
+  --columns: 7;
+  --gap: 4px;
+  grid-template-columns: repeat(var(--columns), minmax(0, 1fr));
+  grid-gap: var(--gap);
+  .words_list-item {
+    background: #343a40;
+    text-align: center;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  .active-done {
+    background-color: #13aa52;
+    color: #fff;
+  }
+  .word_list-info {
+    position: fixed;
+    right: 50%;
+    top: 10%;
+    transform: translateX(50%);
+    width: 400px;
+    height: 200px;
+    background: #343a40;
+    color: #fff;
+    padding: 0 12px;
+    border-radius: 4px;
+    display: none;
+    .sourd-word {
+      display: flex;
+      .btn-sound {
+        align-self: center;
+      }
+    }
+    .word_list_vi-word {
+      margin-bottom: 4px;
+    }
+    .word_list-close {
+      position: absolute;
+      top: 4px;
+      right: 16px;
+      font-size: 24px;
+      font-weight: bold;
+      cursor: pointer;
+      &:hover {
+        color: rgb(255, 0, 0);
+      }
+    }
+    .btn-done {
+      position: absolute;
+      bottom: 10px;
+      right: 16px;
+    }
+  }
+  .active {
+    display: block;
+  }
+  // show course/id
+  .lesson-item:hover {
+    color: #777;
+    border-radius: 4px;
+    border-color: #777;
+  }
+}
+
+// show course/id
+.lesson-item:hover {
+  color: #444;
+  border-radius: 4px;
+  border-color: #777;
+}
+.register-course {
+  border-radius: 4px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+
+  .Continue {
+    pointer-events: none;
+    cursor: default;
+    border: none;
+    background-image: linear-gradient(-180deg, #ff7e31, #e62c03);
+    box-shadow: rgba(0, 0, 0, 0.1) 0 2px 4px;
+    color: #fff;
+  }
+  .Completed {
+    pointer-events: none;
+    cursor: default;
+    border: none;
+    background-image: radial-gradient(
+      circle 939px at 94.7% 50%,
+      rgba(0, 178, 169, 1) 0%,
+      rgba(0, 106, 101, 1) 76.9%
+    );
+    box-shadow: rgba(0, 0, 0, 0.1) 0 2px 4px;
+    color: #fff;
+  }
+}

@@ -1,0 +1,9 @@
+- provide(:title,"Forgot password")
+.container
+  h1.text-center.mt-5 Forgot password
+  .row
+    .col-md-6.mx-auto.my-3
+      = form_for(:password_reset,url: password_resets_path) do |f|
+        = f.label:email
+        = f.email_field:email, class:'form-control'
+        = f.submit"Submit", class:"btn btn-primary btn_submit my-2 btn-submit"

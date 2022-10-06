@@ -1,0 +1,10 @@
+= form_for [:admin, @answer], method: 'patch', html: { autocomplete: "off"} do |f|
+  .form-inline
+    = f.hidden_field :question_id, value: @answer.question.id
+    = f.hidden_field :answer_id, value: @answer.id
+    = f.text_field :answer, placeholder: "Answer", required: true, class: 'form-control mr-2', value: "#{@answer.answer}"
+    .form-check.mr-2
+      = f.check_box :is_key, checked: @answer.is_key
+      = f.label :is_key, " Is key"
+    = f.submit "Update answer", class: 'btn btn-primary'
+    = link_to "Cancel", admin_questions_path(lesson_id: @answer.question.lesson.id), class: 'btn btn-secondary ml-2'

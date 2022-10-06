@@ -1,0 +1,44 @@
+#carouselLesson.carousel.slide data-ride="carousel" data-wrap="false" data-interval="false"
+  - if @lesson.words.present?
+    .carousel-inner.shadow.rounded
+      - @lesson.words.each_with_index do |word, index| 
+        .carousel-item.bg-light.py-4 class="#{index.zero? ? 'active' : ''}"
+          .row
+            .col.px-5
+              .d-flex.justify-content-center.align-items-center.my-5
+                h1.mb-0.text-center
+                  = word.en_word
+                span.oi.oi-volume-high.ml-3.btn-sound data-word="#{word.en_word}"
+              h5.mt-5
+                strong Explain: 
+                | #{word.vi_word}
+              h5.mt-2
+                strong Description:  
+                | #{word.description}
+            .col
+              img.mx-auto.rounded src="https://source.unsplash.com/featured/?#{word.en_word}" width="300" height="300"
+      .carousel-item.bg-light.py-4
+          .row
+            .col
+              img.mx-auto.rounded src="https://media.istockphoto.com/vectors/congratulations-greeting-card-vector-lettering-vector-id1199025903?k=20&m=1199025903&s=612x612&w=0&h=f58ZLBcPziVXtX-7PzLm93tfPqVxDtb71tfl2PGQLI8=" height="300"    
+            .col.d-flex.justify-content-center.align-items-center
+              = button_tag "Do the test", class: "btn btn-primary btn-lg btn-do-practice", data: {lesson_id: @lesson.id}
+    a.carousel-control.carousel-control-prev data-slide="prev" href="#carouselLesson" role="button" 
+      button.btn.btn-primary.btn-lg Previous
+    a.carousel-control.carousel-control-next data-slide="next" href="#carouselLesson" role="button" 
+      button.btn.btn-primary.btn-lg Next
+  - else
+    p.text-secondary.text-center This lesson has no vocabulary.
+
+javascript:
+  $(".carousel")
+    .on("slid.bs.carousel", function () {
+      var $this = $(this);
+      $this.children(".carousel-control").show();
+
+      if ($(".carousel-inner .carousel-item:last").hasClass("active")) {
+        $this.children(".carousel-control-next").hide();
+      } else if ($(".carousel-inner .carousel-item:first").hasClass("active")) {
+        $this.children(".carousel-control-prev").hide();
+      }
+    });

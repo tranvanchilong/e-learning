@@ -1,0 +1,9 @@
+= form_for [:admin, @answer], html: { autocomplete: "off", class: "mb-2"} do |f|
+  .form-inline
+    = f.hidden_field :question_id, value: @question.id
+    = f.text_field :answer, placeholder: "Answer", required: true, class: 'form-control mr-2'
+    .form-check.mr-2
+      = f.check_box :is_key
+      = f.label :is_key, " Is key"
+    = f.submit "Add answer", class: 'btn btn-primary'
+    = link_to "Cancel", admin_questions_path(lesson_id: @question.lesson.id), class: 'btn btn-secondary ml-2'

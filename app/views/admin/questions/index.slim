@@ -1,0 +1,11 @@
+h1.text-center.mt-3 New Question for #{@lesson.course.name} - #{@lesson.name}
+.row
+  .col-md-9
+    = render 'form_create_question'
+    .border.p-3.my-3
+      h3.text-center Preview question
+      = render(@questions) || "There are no questions available."
+  .col-md-3
+    h3.mt-3 Word list
+    - @words.each do |word|
+      p #{word.en_word}

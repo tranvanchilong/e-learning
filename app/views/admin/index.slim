@@ -1,0 +1,19 @@
+- provide(:title, 'Dashboard')
+h1.text-center.text-uppercase.mt-2 Manage User, Course, Word
+.box
+  .user.box-item
+    h3 User Statistics
+    h5 Total User
+    = @user_count
+  .courses.box-item
+    h3 Course Statistics
+    h5 Total Course
+    = @course_count
+  .lessons.box-item
+    h3 Lesson Statistics
+    h5 Total Lesson
+    = @lesson_count
+  .words.box-item
+    h3 Word Statistics
+    h5 Total Word
+    = @word_count

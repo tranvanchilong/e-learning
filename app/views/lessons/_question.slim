@@ -1,0 +1,8 @@
+.mb-2
+  p.mb-2
+    span.font-weight-bold Question #{question_counter+1}: 
+    | #{question.title}
+  - question.answers.each do |answer|
+    .custom-control.custom-radio.mb-1
+      input.custom-control-input id="answer-#{answer.id}" name="#{question.id}" type="radio" value="#{answer.id}" required="required"
+      label.custom-control-label for="answer-#{answer.id}"  #{answer.answer}

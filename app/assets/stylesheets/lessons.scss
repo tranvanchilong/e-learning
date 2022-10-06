@@ -1,0 +1,18 @@
+.carousel-control-prev,
+.carousel-control-next {
+  top: unset;
+  bottom: -60px;
+}
+
+.carousel-control-prev {
+  display: none;
+}
+
+.btn-sound {
+  font-size: 30px;
+  cursor: pointer;
+  transition: all 0.2s linear;
+  &:hover {
+    color: #aaa;
+  }
+}

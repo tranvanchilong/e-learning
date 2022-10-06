@@ -1,0 +1,21 @@
+doctype html
+html
+  head
+    title = full_title(yield(:title))
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+    script crossorigin="anonymous" integrity="sha512-8qmis31OQi6hIRgvkht0s6mCOittjMa9GMqtK9hes5iEQBQE/Ca6yGE5FsW36vyipGoWQswBj/QBm2JR086Rkw==" referrerpolicy="no-referrer" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.5.3/js/bootstrap.min.js" 
+    link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic-bootstrap.min.css" integrity="sha512-UyNhw5RNpQaCai2EdC+Js0QL4RlVmiq41DkmCJsRV3ZxipG2L0HhTqIf/H9Hp8ez2EnFlkBnjRGJU2stW3Lj+w==" referrerpolicy="no-referrer" rel="stylesheet"
+  body
+    = render 'admin/header'
+    .container-fluid
+      .row
+        = render 'admin/sidebar'
+        main.col-10
+          - flash.each do |message_type, message|
+            = content_tag(:div, class:"alert alert-dismissible alert-#{message_type} mt-3") do
+              span #{message}
+              button.close aria-label="Close" data-dismiss="alert" type="button" 
+                span aria-hidden="true"  ×
+          = yield

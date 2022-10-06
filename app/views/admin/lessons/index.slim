@@ -1,0 +1,19 @@
+= link_to "New Lesson", new_admin_lesson_path, class:"btn btn-primary"
+table.table
+  thead
+    tr
+      th scope="col"  No.
+      th scope="col" Lesson Name
+      th scope="col" Course Name
+      th scope="col"  Action
+  tbody
+    - @lessons.each_with_index do |lesson, index|
+        tr
+          td = create_index params[:page], index, Settings.paginate
+          td = lesson.name
+          td = lesson.course.name
+          td
+            = link_to "Edit", edit_admin_lesson_path(lesson), class: "btn btn-warning mr-2"
+            = link_to 'Delete', admin_lesson_path(lesson), method:"delete", data: {:confirm => "You sure?" }, class: "btn btn-danger"
+            = link_to 'Add question', admin_questions_path(lesson_id: lesson), class: "btn btn-info"
+= will_paginate @lessons

@@ -1,0 +1,9 @@
+.container
+  nav.mt-3 aria-label="breadcrumb" 
+    ol.breadcrumb.bg-light
+      li.breadcrumb-item
+        = link_to "Courses", courses_path
+      li.breadcrumb-item
+        = link_to @lesson.course.name, @lesson.course
+      li.breadcrumb-item.active aria-current="page" = @lesson.name
+  = render 'carousel'

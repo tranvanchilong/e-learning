@@ -1,0 +1,16 @@
+- provide(:title, @title)
+.container
+  .row.mt-3
+    .col-md-4.group-my-info
+      section.user_info
+        .my-avatar
+          = image_tag user_image(@user)
+          h1.user_info-link = link_to "#{@user.name}", @user
+      section.stats
+        = render 'shared/stats'
+    .col-md-8
+      h3.text-center.my-4 = @title
+      - if @users.any?
+        ul.user-follow
+          = render @users
+        = will_paginate

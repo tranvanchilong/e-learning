@@ -1,0 +1,4 @@
+form#form_practice.border.p-3.mw-500.mx-auto.mxw-600 autocomplete="off" data={lesson: @lesson.id}
+  h2.text-center Test
+  = render partial: "question", collection: @questions
+  button.btn.btn-primary.btn-submit type="submit" Submit

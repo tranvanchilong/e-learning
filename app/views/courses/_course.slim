@@ -1,0 +1,11 @@
+.course__item
+  .course__item-image
+    = image_tag 'online-course.png'
+  .course__item-title #{course.name}
+  .course__item-price Free
+  .course__item-divider
+  .course__item-stats
+    .icon
+      span class="oi oi-media-play"
+    .text #{course.lessons.size} lessons
+  = link_to "#{check_course_learned(course)}", course, class:"course__item-join"

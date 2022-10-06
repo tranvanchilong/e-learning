@@ -1,0 +1,17 @@
+.container
+  .row.my-3
+    .col-md-8.mr-auto.p-2.register-course
+      h2 Course Contents
+      ul.list-group.mt-3
+        - if @course.lessons.present?
+          - @course.lessons.each do |lesson|
+            = link_to "#{lesson.name} #{show_score(lesson)}", learning_index_path(lesson_id: lesson.id), class:"list-group-item list-group-item-action lesson-item #{check_register_course(@course)} #{check_learned_lesson(lesson)}"
+        - else
+          p.text-center.text-secondary Couldn't find any lessons 
+    .col-md-3.course-sticky.p-2.register-course
+      h1 = @course.name
+      h3.text-success Free
+      = show_button_register_course(@course)
+      p.mt-2 Total: #{@course.words.size} Words
+      p Progress: #{check_progress(@course)} lessons
+      span Study anytime, anywhere

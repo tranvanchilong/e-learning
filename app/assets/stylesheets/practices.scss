@@ -1,0 +1,14 @@
+// Place all the styles related to the practices controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+.custom-radio .custom-control-input {
+  &.is-uncorrect ~ .custom-control-label {
+    color: #dc3545;
+    background-color: #ffd9dc;
+    width: 100%;
+  }
+  &.is-correct ~ .custom-control-label {
+    color: #28a745;
+    font-weight: 500;
+  }
+}

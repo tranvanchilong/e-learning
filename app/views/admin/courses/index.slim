@@ -1,0 +1,19 @@
+- provide(:title, 'Admin - Course')
+= link_to "New Course", new_admin_course_path, class:"btn btn-primary"
+table.table
+  thead
+    tr
+      th scope="col"  ID
+      th scope="col"  Name
+      th scope="col"  Description
+      th scope="col"  Action
+  tbody
+    - @courses.each_with_index do |course, index|
+      tr
+        td = create_index params[:page], index, Settings.paginate
+        td = course.name
+        td = course.description
+        td
+          = link_to "edit", edit_admin_course_path(course), class: "btn btn-warning mr-2"
+          = link_to 'delete', admin_course_path(course), method:"delete", data: {:confirm => "You sure?" }, class: "btn btn-danger"
+= will_paginate @courses

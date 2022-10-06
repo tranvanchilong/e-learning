@@ -1,0 +1,6 @@
+= form_for [:admin, @question], html: { autocomplete: "off"} do |f|
+  .form-group
+    = f.label :title
+    = f.hidden_field :lesson_id, value: @lesson.id
+    = f.text_area :title, placeholder: "Question", required: true, class: 'form-control'
+  = f.submit "Add new question", class: 'btn btn-primary'

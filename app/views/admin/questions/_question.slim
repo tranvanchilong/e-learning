@@ -1,0 +1,9 @@
+.question-preview.mb-3
+  .d-flex.mb-3 (id="edit-question-holder-#{question.id}")
+    h5 Q#{question_counter + 1}: #{question.title}
+    = button_tag "Edit question", class: "btn btn-info btn-sm btn-edit-question ml-auto mr-2", data: {question_id: question.id}
+    = link_to 'Delete', admin_question_path(question), method:"delete", data: {:confirm => "You sure?" }, class: "btn btn-danger btn-sm"
+  = render question.answers
+
+  div (id="new-answer-holder-#{question.id}")
+  = button_tag "New answer", class: "btn btn-primary btn-sm btn-add-answer", data: {question_id: question.id}

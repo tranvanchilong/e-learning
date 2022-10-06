@@ -1,0 +1,28 @@
+.hero
+  .container.hero__container
+    .hero__content
+      h1.hero__heading Lockdown Can't Stop Your Learning
+      p.hero__description Elearn is a Global training provider based across the UK that specialises in accredited and bespoke training courses. We crush the barriers to getting a degree.
+      = link_to "Explore courses", courses_path, class: 'btn hero__btn'
+.brand
+  .container.brand__container
+    .d-flex
+      img src="https://cdn.worldvectorlogo.com/logos/udemy-2.svg"
+    .d-flex
+      img src="https://cdn.worldvectorlogo.com/logos/khan-academy-1.svg"
+    .d-flex
+      img src="https://cdn.worldvectorlogo.com/logos/coursera.svg"
+    .d-flex
+      img src="https://cdn.worldvectorlogo.com/logos/udacity-2.svg"
+    .d-flex
+      img src="https://cdn.worldvectorlogo.com/logos/github-2.svg"
+.course
+  .container.course__container
+    .course__search
+      span class="oi oi-magnifying-glass icon-search"
+      input.course__search-input placeholder="Course Name"
+      .course__search-btn Search
+    .course__list
+      = render(@courses) || "No Data Available"
+    .text-center.mt-5
+      = link_to "Load More Courses", courses_path, class: 'btn hero__btn'

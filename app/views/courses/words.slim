@@ -1,0 +1,24 @@
+.container
+  h3.text-center.my-4 Words #{@course.name}
+  .btn-learn-wrods.my-4
+    = link_to "Get all", words_course_path(@course, filter: 'all'), class:"btn btn-info mr-2 btn-get-all"
+    = link_to "Get all learned",words_course_path(@course, filter: 'learned'), class:"btn btn-primary mr-2 btn-get-learned"
+    = link_to "Get all unlearn",words_course_path(@course, filter: 'unlearn'), class:"btn btn-secondary mr-2 btn-get-unlearn"
+    .alphabet-form 
+      p.btn.btn-secondary.mb-0.btn-alphabet
+        | Alphabet
+        i.oi.oi-caret-bottom.ml-2
+      div class="alphabet-wrapper mt-1 "
+        - ("a".."z").each do |letter|
+          = link_to "#{letter}",words_course_path(@course, key: letter), class:"btn alphabet-word"
+  .words_list.mb-4.get-all
+    - @words.each do |word|
+      = button_tag "#{word.en_word}", class: "btn words_list-item btn-words-list-item #{check_user_word(word)}", data: {id: word.id}
+      .word_list-info class="info_word-list-#{word.id}"
+        .sourd-word.border-bottom
+          h4.word_list-title.my-2 = word.en_word
+          i.oi.oi-volume-high.ml-2.btn-sound data-word="#{word.en_word}"
+        p.mt-2.word_list_vi-word = word.vi_word
+        span.word_list-description = word.description
+        span.word_list-close data={id: word.id}   x
+        = check_done_word(word)

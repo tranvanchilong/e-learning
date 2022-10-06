@@ -1,0 +1,230 @@
+$light-gray: #777;
+$gray-medium-light: #eaeaea;
+$white: #fff;
+$header-height: 55px;
+.main {
+  padding-top: 76px;
+  padding-bottom: 30px;
+  min-height: calc(100vh - 63px);
+}
+.navbar {
+  .btn-login {
+    padding: 10px 24px;
+    background-color: #85d1a0;
+    color: #fff;
+
+    &:hover {
+      background-color: darken(#85d1a0, 10%);
+    }
+  }
+}
+
+footer {
+  padding: 10px 0;
+  color: #fff;
+  background: #444;
+
+  .socials {
+    display: flex;
+    gap: 0 15px;
+    cursor: pointer;
+  }
+}
+
+.hero {
+  height: 600px;
+  background-image: url(asset-path('hero-background-1.png'));
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-bottom: 80px;
+
+  &__container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+
+  &__content {
+    max-width: 550px;
+  }
+
+  &__heading {
+    font-size: 60px;
+    font-weight: 700;
+    color: #413960;
+    margin-bottom: 32px;
+  }
+
+  &__description {
+    color: #9e98ae;
+    margin-bottom: 28px;
+    max-width: 450px;
+  }
+
+  &__btn {
+    background-color: #6255a5;
+    color: white;
+    padding: 15px 25px;
+
+    &:hover {
+      background-color: darken(#6255a5, 10%);
+      color: white;
+      cursor: pointer;
+    }
+  }
+}
+
+.brand {
+  margin-bottom: 80px;
+
+  &__container {
+    --columns: 5;
+    --gap: 40px;
+    display: grid;
+    grid-template-columns: repeat(var(--columns), minmax(0, 1fr));
+    grid-gap: var(--gap);
+    border-top: 1px solid #c8c5d1;
+    border-bottom: 1px solid #c8c5d1;
+    padding: 30px 0;
+  }
+}
+
+.course {
+  margin-bottom: 20px;
+  &__search {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    margin-bottom: 50px;
+
+    .icon-search {
+      color: #9c96ac;
+    }
+
+    &-input {
+      border: none;
+      outline: none;
+      padding: 10px 15px;
+      flex: 1;
+    }
+
+    &-btn {
+      background-color: #85d1a0;
+      padding: 10px 20px;
+      color: white;
+      border-radius: 4px;
+      transition: all 0.5s ease;
+    }
+
+    &-btn:hover {
+      cursor: pointer;
+      background-color: darken(#85d1a0, 10%);
+    }
+  }
+
+  &__list {
+    --columns: 3;
+    --gap: 20px;
+    display: grid;
+    grid-template-columns: repeat(var(--columns), minmax(0, 1fr));
+    grid-gap: var(--gap);
+  }
+
+  &__item {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    border: 1px solid #dfdfdf;
+    border-radius: 4px;
+    padding: 20px;
+    min-height: 350px;
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: translateY(-5px);
+    }
+
+    &-image {
+      width: 70px;
+      margin-bottom: 15px;
+    }
+
+    &-title {
+      color: #423a61;
+      font-weight: 500;
+      font-size: 28px;
+    }
+
+    &-price {
+      color: #85d1a0;
+      font-size: 28px;
+    }
+
+    &-divider {
+      width: 100%;
+      border-top: 1px solid #e1e1e1;
+      margin-bottom: 20px;
+      margin-top: auto;
+    }
+
+    &-stats {
+      display: flex;
+      margin-bottom: 20px;
+
+      .icon {
+        background-color: #f6f5f7;
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        span {
+          color: #85d1a0;
+          margin-left: 4px;
+          margin-bottom: 2px;
+        }
+      }
+
+      .text {
+        color: #423a61;
+        margin-left: 15px;
+      }
+    }
+
+    &-join {
+      background-color: #fff;
+      padding: 10px 20px;
+      color: #423a61;
+      border: 1px solid #423a61;
+      border-radius: 4px;
+      transition: all 0.5s ease;
+    }
+
+    &-join:hover {
+      background-color: #6255a5;
+      color: white;
+      cursor: pointer;
+      border-color: #6255a5;
+      text-decoration: none;
+    }
+  }
+}
+
+@media screen and (max-width: 767.98px) {
+  .course__list {
+    --columns: 2;
+  }
+}
+
+@media screen and (max-width: 374.98px) {
+  .course__list {
+    --columns: 1;
+  }
+}

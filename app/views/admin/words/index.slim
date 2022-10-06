@@ -1,0 +1,22 @@
+= link_to "New Word", new_admin_word_path, class:"btn btn-primary"
+table.table
+  thead
+    tr
+      th scope="col"  No.
+      th scope="col"  English
+      th scope="col"  VietName
+      th scope="col"  Description
+      th scope="col"  Name Course
+      th scope="col"  Action
+  tbody
+    - @words.each_with_index do |word, index|
+      tr
+        td = create_index params[:page], index, Settings.paginate
+        td = word.en_word
+        td = word.vi_word
+        td = word.description
+        td = word.course.name
+        td
+          = link_to "edit", edit_admin_word_path(word), class: "btn btn-warning mr-2"
+          = link_to 'delete', admin_word_path(word), method:"delete", data: {:confirm => "You sure?" }, class: "btn btn-danger"
+= will_paginate @words

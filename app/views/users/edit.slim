@@ -1,0 +1,9 @@
+- provide(:title, 'Setting')
+.container
+  h1.text-center.mt-3 Sign Up
+  .row
+    .col-md-6.mx-auto.my-3
+      = form_for(@user) do |f|
+        = render 'signup_form', f: f
+        = f.file_field :image
+        = f.submit"Update my account", class:"btn btn-primary btn_submit mt-4 btn-submit"

@@ -1,0 +1,6 @@
+h1.text-center Word
+.row
+  .col-md-6.mx-auto.my-3
+    = form_for([:admin, @word]) do |f|
+      = render "word_form", f: f
+      = f.submit"Add word", class:"btn btn-primary btn_submit mt-4 btn-submit"

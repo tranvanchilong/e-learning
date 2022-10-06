@@ -1,0 +1,10 @@
+- provide(:title, 'All users')
+.container
+  h1.text-center.text-uppercase.mt-5 All users
+  ul.users
+    - @users.each do |user|
+      - unless user.is_admin
+        li
+          = image_tag user_image(user)
+          = link_to user.name, user
+  = will_paginate @users
